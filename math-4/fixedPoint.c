@@ -12,40 +12,25 @@ double g(double x) {
 }
 
 int main() {
-    double x0, x1, E;
+    double x0, x1, E,error;
     int maxIter, i = 1;
 
     printf("Enter initial guess: ");
     scanf("%lf", &x0) ;
 
-    printf("Enter allowed error tolerance (e.g., 0.0001): ");
-    scanf("%lf", &E);
-
-    printf("Enter maximum iterations: ");
-    scanf("%d", &maxIter);
-
-    printf("\nStep\t\tx0\t\tg(x0) [x1]\t\tAbsolute Error\n");
-    printf("-----------------------------------------------------------------------\n");
+    printf("Enter allowed error tolerance and maximum iterations : ");
+    scanf("%lf %d", &E,&maxIter);
 
     do {
         
         x1 = g(x0);
-        double error = fabs(x1 - x0);
-
-      
-        printf("%d\t\t%0.6lf\t%0.6lf\t\t%0.6lf\n", i, x0, x1, error);
-
-        if (error < tolerance) {
-            printf("\nConvergence achieved! The real root is: %0.6lf\n", x1);
-            return 0;
-        }
-
-        
+         error = fabs(x1 - x0);
+      printf("iteration %d:%f \n",i,x1);  
         x0 = x1;
-        step++;
+        i++;
 
-    } while (step <= max_iterations);
+    } while (error>E);
 
-    printf("\nThe method did not converge within %d iterations.\n", max_iterations);
+    printf("\nThe method did not converge within %d iterations.\n", maxIter);
     return 0;
 }
