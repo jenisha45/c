@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-  float a[100],b[100],sum=b[0],prod,x;
+  float a[100],b[100],sum=0,prod,x;
   int i,j,n;
   
   printf("enter the size of array");
@@ -9,14 +9,14 @@ int main()
   
   printf("enter the first array element");
   for(i=0;i<n;i++)
-   scanf("%d",&a[i]);
+   scanf("%f",&a[i]);
  
   printf("enter the second array element");
   for(i=0;i<n;i++)
-   scanf("%d",&b[i]);
+   scanf("%f",&b[i]);
 
   printf("enter value of a to find y:");
-  scanf("%d",&x);
+  scanf("%f",&x);
 
   for(i=0;i<n;i++)
     {
