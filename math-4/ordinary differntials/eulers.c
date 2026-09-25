@@ -1,5 +1,4 @@
-// Online C compiler (editor)
-// Write and run C online using this editor.
+
 
 #include <stdio.h>
 float f(float x,float y)
